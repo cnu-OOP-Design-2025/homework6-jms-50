@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+
 class Bird {
     std::string species; 
 public:
@@ -27,4 +28,49 @@ public:
     virtual ~Bird() {
         std::cout << species << " has died" << std::endl;
      }
+};
+
+class Duck:public Bird{    
+public:
+    Duck(): Bird("Duck"){
+        this->cry();
+    }
+    ~Duck(){
+        this->cry();
+    }
+    void cry(){
+        std::cout << "Quack!" << std::endl;
+    }
+};
+
+class Penguin:public Bird{
+public:
+    Penguin():Bird("Penguin"){
+        this->cry();
+    }
+    ~Penguin(){
+        this->cry();
+    }
+    void cry(){
+        std::cout << "Squawk!" << std::endl;
+    }
+    void fly() {
+        std::cout << "This bird can't fly." << std::endl;
+    }
+};
+
+class Eagle:public Bird{
+public:
+    Eagle():Bird("Eagle"){
+        this->cry();
+    }
+    ~Eagle(){
+        this->cry();
+    }
+    void cry(){
+        std::cout << "Screech!" << std::endl;
+    }
+    void swim() {
+        std::cout << "This bird can't swim." << std::endl;
+    }
 };
